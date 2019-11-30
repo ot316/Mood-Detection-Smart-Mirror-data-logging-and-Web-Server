@@ -12,12 +12,12 @@ function parseData(createGraph) {
 
 function createGraph(data) {
   var datetime = [];
-  var angry = [];
-  var disgust = [];
-  var happy = [];
-  var sad = [];
-  var surprise = [];
-  var maximumpredictedemotion = [];
+  var angry = ["Angry"];
+  var disgust = ["Disgust"];
+  var happy = ["Happy"];
+  var sad = ["Sad"];
+  var surprise = ["Surprise"];
+  var maximumpredictedemotion = ["Maxium Predicted Emotion"];
 
   for (var i = data.length-100; i < data.length; i++) {
     datetime.push(data[i][1]);
@@ -29,9 +29,20 @@ function createGraph(data) {
     maximumpredictedemotion.push(data[i][8])
     console.log(data[i][8]);
   }
-  // var chart = c3.generate({
-  //     bindto: '#chart',
-  // })
+  var chart = c3.generate({
+       bindto: '#chart',
+       data: {
+         columns [
+           datetime
+         ]
+       },
+       axis: {
+         x: {
+           type: 'category',
+           categories: angry
+         }
+       }
+   })
 }
 
 parseData(createGraph);
