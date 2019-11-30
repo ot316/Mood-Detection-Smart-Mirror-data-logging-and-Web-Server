@@ -11,11 +11,23 @@ function parseData(createGraph) {
 }
 
 function createGraph(data) {
-  var time = [];
-  var emotions = [];
+  var datetime = [];
+  var angry = [];
+  var disgust = [];
+  var happy = [];
+  var sad = [];
+  var surprise = [];
+  var maximumpredictedemotion = [];
 
-  for (var i = 1; i < data.length; i++) {
-    console.log(data[i][1]);
+  for (var i = 1; i < 100; i++) {
+    console.log(data[i][2]);
+    datetime.push(data[i][1]);
+    angry.push(data[i][2]);
+    disgust.push(data[i][3]);
+    happy.push(data[i][4]);
+    sad.push(data[i][5]);
+    surprise.push(data[i][6]);
+    maximumpredictedemotion.push(data[i][8])
   }
   // var chart = c3.generate({
   //     bindto: '#chart',
