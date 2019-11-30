@@ -19,7 +19,7 @@ function createGraph(data) {
   var surprise = ["Surprise"];
   var maximumpredictedemotion = ["Maxium Predicted Emotion"];
 
-  for (var i = data.length-100; i < data.length; i++) {
+  for (var i = data.length-101; i < data.length-1; i++) {
     datetime.push(data[i][1]);
     angry.push(data[i][2]);
     disgust.push(data[i][3]);
