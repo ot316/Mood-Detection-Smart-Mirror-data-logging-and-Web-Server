@@ -7,3 +7,9 @@ function parseData(createGraph) {
 		}
 	});
 }
+
+function createGraph(data) {
+
+}
+
+parseData(createGraph);
