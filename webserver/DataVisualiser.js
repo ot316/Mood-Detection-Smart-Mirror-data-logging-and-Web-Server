@@ -1,3 +1,4 @@
+console.log("running")
 var chart = new Chart('chart', {
   type: 'horizontalBar',
   data: {
