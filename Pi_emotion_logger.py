@@ -65,9 +65,6 @@ while True:
             df = df.append(data, ignore_index=True)
             print(predicted_emotion)
             cv2.putText(test_img, predicted_emotion, (int(x), int(y-10)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 2)
-            test_img = cv2.flip(test_img, 1)
-            resized_img = cv2.resize(test_img, (1000, 700))
-            cv2.imshow('Facial emotion analysis ',resized_img)            
             count+=1
                 
         if count == 100:
@@ -76,7 +73,6 @@ while True:
             count = 0
     
    
-    test_img = cv2.flip(test_img, 1)
     resized_img = cv2.resize(test_img, (1000, 700))
     cv2.imshow('Facial emotion analysis ',resized_img)
 
