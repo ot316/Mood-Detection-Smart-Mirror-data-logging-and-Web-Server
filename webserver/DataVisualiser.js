@@ -27,6 +27,7 @@ function createGraph(data) {
     sad.push(data[i][5]);
     surprise.push(data[i][6]);
     maximumpredictedemotion.push(data[i][8])
+    console.log(data[i][8]);
   }
   // var chart = c3.generate({
   //     bindto: '#chart',
