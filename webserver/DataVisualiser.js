@@ -42,7 +42,7 @@ function createGraph(data) {
            categories: angry
          }
        }
-   })
+   });
 }
 
 parseData(createGraph);
