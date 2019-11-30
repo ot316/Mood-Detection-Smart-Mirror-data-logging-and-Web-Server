@@ -1,6 +1,6 @@
 /Lib/
 /Scripts/
-Training_Dataset.csv
+*.csv
 *.npy
 
 

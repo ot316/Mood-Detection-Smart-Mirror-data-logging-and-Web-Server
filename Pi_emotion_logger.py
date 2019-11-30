@@ -21,13 +21,13 @@ width = 48
 height = 48
 
 try: 
-    df = pd.read_csv("emotion_data.csv")
+    df = pd.read_csv("emotion_data.csv", index_col = 0)
     print("emotion_data loaded")
     
 except: 
-    df = pd.DataFrame(columns = ["DateTime", "Emotion"])
+    df = pd.DataFrame(columns = ["DateTime", "Angry", "Disgust", "Happy", "Sad", "Surprise", "Neutral","Maximum Predicted Emotion"])
     df.to_csv("emotion_data.csv")
-    df = pd.read_csv("emotion_data.csv")
+    df = pd.read_csv("emotion_data.csv", index_col = 0)
     print("File emotion_data.csv not found, it has been created.")
 
 while True:
@@ -56,27 +56,29 @@ while True:
         max_index = np.argmax(predictions[0])
 
         #classifications
-        emotions = ('angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral')
+        emotions = ('angry', 'disgust', 'neutral', 'happy', 'sad', 'surprise', 'neutral')
         
-        if max_index != 2: #and max_index != 6: #ignore biased emotions
-            predicted_emotion = emotions[max_index]
-            if predicted_emotion:
-                data = {"DateTime": datetime.datetime.now(), "Emotion": predicted_emotion}
-                df = df.append(data, ignore_index=True)
-                test_img = cv2.flip(test_img, 1)
-                print(predicted_emotion)
-                cv2.putText(test_img, predicted_emotion, (int(x), int(y-10)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 2)
-                count+=1
+        predicted_emotion = emotions[max_index]
+        
+        if predicted_emotion and predicted_emotion != 'neutral':
+            data = {"DateTime": datetime.datetime.now(), "Angry": predictions[0,0], "Disgust": predictions[0,1], "Happy": predictions[0,3], "Sad": predictions[0,4], "Surprise": predictions[0,5], "Neutral": predictions[0,5], "Maximum Predicted Emotion": predicted_emotion}
+            df = df.append(data, ignore_index=True)
+            print(predicted_emotion)
+            cv2.putText(test_img, predicted_emotion, (int(x), int(y-10)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 2)
+            test_img = cv2.flip(test_img, 1)
+            resized_img = cv2.resize(test_img, (1000, 700))
+            cv2.imshow('Facial emotion analysis ',resized_img)            
+            count+=1
                 
-        if count == 50:
-            df.to_csv("emotion_data")
+        if count == 100:
+            df.to_csv("emotion_data.csv")
             print("csv file saved")
             count = 0
     
    
-    
+    test_img = cv2.flip(test_img, 1)
     resized_img = cv2.resize(test_img, (1000, 700))
-    #cv2.imshow('Facial emotion analysis ',resized_img)
+    cv2.imshow('Facial emotion analysis ',resized_img)
 
     if cv2.waitKey(10) == ord('q'): #wait until 'q' key is pressed
         break
