@@ -17,9 +17,9 @@ function createGraph(data) {
   for (var i = 1; i < data/length; i++) {
     console.log(data[i][1]);
   }
-  var chart = c3.generate({
-      bindto: '#chart',
-  })
+  // var chart = c3.generate({
+  //     bindto: '#chart',
+  // })
 }
 
 parseData(createGraph);
