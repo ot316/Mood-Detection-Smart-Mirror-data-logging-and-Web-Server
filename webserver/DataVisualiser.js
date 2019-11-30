@@ -32,7 +32,7 @@ function createGraph(data) {
   var chart = c3.generate({
        bindto: '#chart',
        data: {
-         columns [
+         columns: [
            datetime
          ]
        },
