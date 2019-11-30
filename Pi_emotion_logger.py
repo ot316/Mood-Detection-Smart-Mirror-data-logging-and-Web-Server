@@ -21,12 +21,12 @@ width = 48
 height = 48
 
 try: 
-    df = pd.read_csv("emotion_data.csv", index_col = 0)
+    df = pd.read_csv("webserver/emotion_data.csv", index_col = 0)
     print("emotion_data loaded")
     
 except: 
     df = pd.DataFrame(columns = ["DateTime", "Angry", "Disgust", "Happy", "Sad", "Surprise", "Neutral","Maximum Predicted Emotion"])
-    df.to_csv("emotion_data.csv")
+    df.to_csv("webserver/emotion_data.csv")
     df = pd.read_csv("emotion_data.csv", index_col = 0)
     print("File emotion_data.csv not found, it has been created.")
 
@@ -68,7 +68,7 @@ while True:
             count+=1
                 
         if count == 100:
-            df.to_csv("emotion_data.csv")
+            df.to_csv("webserver/emotion_data.csv")
             print("csv file saved")
             count = 0
     
