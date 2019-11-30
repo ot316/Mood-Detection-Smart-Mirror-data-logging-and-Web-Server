@@ -9,3 +9,10 @@ var chart = new Chart('chart', {
     ]
   }
 });
+
+d3.csv('emotion_data.csv')
+  .then(makeChart);
+
+function makeChart(players) {
+  // players is an array of objects where each object represents a player
+}
