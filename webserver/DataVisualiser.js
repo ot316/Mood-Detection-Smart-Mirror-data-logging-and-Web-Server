@@ -1,6 +1,4 @@
 console.log("running")
-$(document).ready(function() {
-
   var TITLE = 'Mood Over Past Week';
 
   // Which column names contain data points?
@@ -110,5 +108,3 @@ $(document).ready(function() {
     });
 
   });
-
-});
