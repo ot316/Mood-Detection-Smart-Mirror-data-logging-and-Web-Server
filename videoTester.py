@@ -18,8 +18,9 @@ cap=cv2.VideoCapture(0)
 while True:
     ret,test_img=cap.read()  # captures frame and returns boolean value and captured image
     if not ret:
-        continue
-        
+        print("camera error")
+        break
+            
     #remove colour
     gray_img= cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
 
@@ -43,7 +44,7 @@ while True:
 
         cv2.putText(test_img, predicted_emotion, (int(x), int(y-10)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 2)
 
-    resized_img = cv2.resize(test_img, (1000, 700))
+    resized_img = cv2.resize(test_img, (1000, 1000))
     cv2.imshow('Facial emotion analysis ',resized_img)
 
     if cv2.waitKey(10) == ord('q'): #wait until 'q' key is pressed
