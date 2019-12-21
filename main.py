@@ -81,8 +81,10 @@ while True:
             print("csv file saved")
             count = 0
     
-
+    
     resized_img = cv2.resize(test_img, (1000, 700))
+    cv2.imshow('Facial emotion analysis ',resized_img)
+    
     if len(arguments) == 2:
         if arguments[1] == "-show":
             cv2.imshow('Facial emotion analysis ',resized_img)
