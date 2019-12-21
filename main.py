@@ -1,4 +1,5 @@
 import os
+import sys
 import cv2
 import datetime
 import numpy as np
@@ -20,6 +21,8 @@ count = 0
 width = 48
 height = 48
 
+arguments = sys.argv
+
 try: 
     df = pd.read_csv("webserver/emotion_data.csv", index_col = 0)
     print("emotion_data loaded")
@@ -30,11 +33,16 @@ except:
     df = pd.read_csv("emotion_data.csv", index_col = 0)
     print("File emotion_data.csv not found, it has been created.")
 
+if len(arguments) == 2:
+    if arguments[1] == "-show":
+        print("Running with video feed, press 'q' key to exit.")
+            
 while True:
     ret,test_img=cap.read()  # captures frame and returns boolean value and captured image
     if not ret:
         print("camera error")
         break
+    
     gray_img= cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
     
     
@@ -73,9 +81,11 @@ while True:
             print("csv file saved")
             count = 0
     
-   
+
     resized_img = cv2.resize(test_img, (1000, 700))
-    cv2.imshow('Facial emotion analysis ',resized_img)
+    if len(arguments) == 2:
+        if arguments[1] == "-show":
+            cv2.imshow('Facial emotion analysis ',resized_img)
 
     if cv2.waitKey(10) == ord('q'): #wait until 'q' key is pressed
         break
