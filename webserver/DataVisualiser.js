@@ -5,12 +5,12 @@ function parseData(createGraph) {
     Papa.parse("emotion_data.csv", {
         download: true,
         complete: function(results) {
-            createGraph(results.data);
+            Graph(results.data);
         }
     });
 }
 
-function createGraph(data) {
+function Graph(data) {
     var datetime = [];
     var angry = ["Angry"];
     var disgust = ["Disgust"];
