@@ -19,13 +19,7 @@ while True:
     ret,test_img=cap.read()  # captures frame and returns boolean value and captured image
     if not ret:
         continue
-    
-    #rotate image
-    (h, w) = test_img.shape[:2]
-    center = (w / 2, h / 2)
-    M = cv2.getRotationMatrix2D(center, 90, 1.0)
-    test_img = cv2.warpAffine(test_img, M, (h, w))    
-    
+        
     #remove colour
     gray_img= cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
 
