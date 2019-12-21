@@ -45,9 +45,7 @@ while True:
     
     #rotate image
 
-    test_img = cv2.transpose(test_img)
-    test_img = cv2.flip(test_img,flipCode=0)
-    
+
     
     
     gray_img= cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
@@ -89,7 +87,7 @@ while True:
             count = 0
     
     
-    resized_img = cv2.resize(test_img, (1000, 1000))
+    resized_img = cv2.resize(test_img, (1000, 700))
     cv2.imshow('Facial emotion analysis ',resized_img)
     
     if len(arguments) == 2:
