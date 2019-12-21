@@ -33,7 +33,8 @@ except:
 while True:
     ret,test_img=cap.read()  # captures frame and returns boolean value and captured image
     if not ret:
-        continue
+        print("camera error")
+        break
     gray_img= cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
     
     
