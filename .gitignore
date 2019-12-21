@@ -2,5 +2,6 @@
 /Scripts/
 *.csv
 *.npy
+*.img
 
 
