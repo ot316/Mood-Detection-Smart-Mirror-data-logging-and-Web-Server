@@ -43,6 +43,14 @@ while True:
         print("camera error")
         break
     
+    #rotate image
+    test_img = test_img[0:480, 0:480]
+
+    test_img = cv2.transpose(test_img)
+    test_img = cv2.flip(test_img,flipCode=0)
+    
+    
+    
     gray_img= cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
     
     
