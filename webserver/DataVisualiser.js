@@ -2,8 +2,10 @@ console.log("running")
 var ctx = document.getElementById('myChart').getContext('2d');
 
 Papa.parse("emotion_data.csv", {
-    download: true,
-    complete: function(results) {
+    worker: true,
+    step: function(results) {
+
+        console.log("data read")
         var data = results.data
         var datetime = [];
         var angry = ["Angry"];
