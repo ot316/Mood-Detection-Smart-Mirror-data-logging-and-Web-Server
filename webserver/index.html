@@ -17,12 +17,26 @@
 <body>
 
     <div class="graphcontainer">
-        <h1 class="title">Dashboard</h1>
-        <canvas id="myChart" width="60vw" height="20vw"></canvas>
+        <h1 class="title">Facial Emotion Recognition Dashboard</h1>
+        <h2 class="heading">Latest Readings</h2>
+        <canvas id="Chart1" width="60vw" height="20vw"></canvas>
+
+        <div>
+            <h3 class="heading">Enter number of datapoints to display</h3>
+            <input name="textbox1" id="userinput" type="number" />
+            <input name="buttonExecute" onclick="setup()" type="button" value="Apply" />
+        </div>
+
+
+        <h2 class="heading">Previous Days</h2>
+        <canvas id="Chart2" width="60vw" height="20vw"></canvas>
     </div>
 
+
+
 </body>
-<script type='text/javascript' src="DataVisualiser.js"></script>
+<script type='text/javascript' src="Chart1.js"></script>
+<script type='text/javascript' src="Chart2.js"></script>
 
 
 
