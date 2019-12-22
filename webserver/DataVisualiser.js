@@ -5,6 +5,7 @@ Papa.parse("emotion_data.csv", {
     worker: true,
     step: function(results) {
         var data = results.data;
+        console.log(data);
     }
 });
 
