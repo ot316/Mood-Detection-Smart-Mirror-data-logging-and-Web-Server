@@ -4,21 +4,75 @@
 <head>
     <meta charset="utf-8">
     <title>Mood Tracking Dashboard</title>
-    <!-- Load d3.js and c3.js -->
-    <script src="javascripts/d3.v3.min.js" charset="utf-8"></script>
-    <script src="javascripts/Chart.bundle.min.js"></script>
-    <script src="javascripts/c3.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Load chart.js -->
+    <script src="javascripts/Chart.bundle.min.js"></script>
     <!-- Load papaparse.js -->
     <script src="javascripts/papaparse.min.js"></script>
+    <!-- Load Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>Dashboard
-        <h1>
-            <canvas id="myChart" width="400" height="400"></canvas>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+                <a class="navbar-brand">SIOT</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Dashboard</a></li>
+                    <li><a href="livegraph.html"> Live Graph</a></li>
+                    <li><a href="rawdata.html"> Raw Data</a></li>
+                    <li><a href="https://github.com/ot316/Mood-Detection-Smart-Mirror-data-logging-and-Web-Server">Github Repository</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container">
+
+        <div class="starter-template" style="padding-top: 70px; padding-bottom: 20px;  text-align: center;">
+            <h1>Facial Emotion Recognition Dashboard</h1>
+            <p>Normalised data points are averaged over each timescale increment.</p>
+        </div>
+
+    </div>
+    <div class="graphcontainer">
+        <canvas id="Chart2" width="60vw" height="20vw"></canvas>
+        <div style="padding-top: 10px;">
+
+            <div style="float: left; padding-left: 40px;">
+                <h4 class="heading">Choose timescale</h4>
+                <input name="Days" onclick="choose(16)" type="button" value="Days" />
+                <input name="Hours" onclick="choose(13)" type="button" value="Hours" />
+                <input name="Minutes" onclick="choose(10)" type="button" value="Minutes" />
+                <input name="Seconds" onclick="choose(7)" type="button" value="Seconds" />
+            </div>
+
+            <div style="float: right; padding-right: 80px;">
+                <h4 class="heading">Enter number of datapoints to display</h4>
+                <input name="textbox2" id="userinput2" type="number" />
+                <input name="buttonExecute" onclick="setup2()" type="button" value="Apply" />
+            </div>
+        </div>
+    </div>
+
+
+
 </body>
-<script type='text/javascript' src="DataVisualiser.js"></script>
+<script type='text/javascript' src="Chart2.js"></script>
 
 
 
