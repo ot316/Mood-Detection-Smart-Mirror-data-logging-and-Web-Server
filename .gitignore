@@ -1,6 +1,6 @@
 /Lib/
 /Scripts/
-*.csv
+.csv
 *.npy
 *.img
 
