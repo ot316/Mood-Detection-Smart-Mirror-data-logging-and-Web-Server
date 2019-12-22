@@ -3,7 +3,7 @@ var ctx = document.getElementById('myChart').getContext('2d');
 
 var data = Papa.parse("emotion_data.csv", {
     worker: true,
-    complete: function(results) {
+    step: function(results) {
         console.log("CSV read")
     }
 });
