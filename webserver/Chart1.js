@@ -100,7 +100,7 @@ function graph(datapoints) {
             }
             //normalise data
             angry = normalise(angry);
-            disgustn = normalise(disgust);
+            disgust = normalise(disgust);
             happy = normalise(happy);
             sad = normalise(sad);
             surprise = normalise(surprise);
@@ -137,7 +137,7 @@ function graph(datapoints) {
                     }, {
                         fill: false,
                         label: 'Disgust',
-                        data: disgustn,
+                        data: disgust,
                         borderColor: [
                             'rgba(70, 255, 2, 0.5)',
                         ],
