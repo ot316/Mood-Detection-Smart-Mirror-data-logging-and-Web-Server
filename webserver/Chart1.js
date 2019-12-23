@@ -1,11 +1,7 @@
 console.log("running");
 var ctx = document.getElementById('Chart1').getContext('2d');
 
-if (typeof datapoints != 'number') {
-    var datapoints = 100
-}
-
-graph(datapoints)
+setup1();
 
 window.setInterval(function() {
     setup1();
@@ -14,10 +10,10 @@ window.setInterval(function() {
 function setup1() {
     var datapoints = document.getElementById("userinput1").value;
     if (typeof datapoints != 'number') {
-        var datapoints = 100
+        var datapoints = 100;
     }
-    console.log(datapoints)
-    graph(datapoints)
+    console.log(datapoints);
+    graph(datapoints);
 }
 
 // min max scaler normalisation function
