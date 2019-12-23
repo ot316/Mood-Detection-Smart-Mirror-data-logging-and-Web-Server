@@ -2,46 +2,61 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
-    <style>
-        table {
-            border-collapse: collapse;
-            border: 2px black solid;
-            font: 12px sans-serif;
-        }
-        
-        td {
-            border: 1px black solid;
-            padding: 5px;
-        }
-    </style>
+    <title>Raw CSV Data</title>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Load chart.js -->
+    <script src="javascripts/Chart.bundle.min.js"></script>
+    <!-- Load papaparse.js -->
+    <script src="javascripts/papaparse.min.js"></script>
+    <!-- Load Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Load D3 -->
+    <script src="javascripts/d3.v3.min.js"></script>
+
 </head>
 
 <body>
-    <!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
-    <script src="javascripts/d3.v3.min.js"></script>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">SIOT</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="livegraph.html"> Live Readings</a></li class="active">
+                    <li class="active"><a href="rawdata.html"> Raw Data</a></li class="active">
+                    <li><a href="https://github.com/ot316/Mood-Detection-Smart-Mirror-data-logging-and-Web-Server">Github
+                            Repository</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container">
+        <div class="starter-template" style="padding-top: 70px; text-align: center;">
+            <h1>Raw Data</h1>
+        </div>
+    </div>
+    <tablediv class="tablecontainer"></tablediv>
 
-    <script type="text/javascript" charset="utf-8">
-        d3.text("emotion_data.csv", function(data) {
-            var parsedCSV = d3.csv.parseRows(data);
 
-            var container = d3.select("body")
-                .append("table")
+    <script src="rawdata.js"></script>
 
-            .selectAll("tr")
-                .data(parsedCSV).enter()
-                .append("tr")
 
-            .selectAll("td")
-                .data(function(d) {
-                    return d;
-                }).enter()
-                .append("td")
-                .text(function(d) {
-                    return d;
-                });
-        });
-    </script>
 </body>
 
 </html>
