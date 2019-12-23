@@ -22,7 +22,7 @@ function normalise(array) {
     var max = Math.max(array);
     var min = Math.min(array);
     for (var i = 0; i < array.length; i++) {
-        (array[i] - min) / (max - min)
+        array[i] = (array[i] - min) / (max - min)
     }
     return (array)
 }
