@@ -1,7 +1,7 @@
 console.log("running");
 var ctx2 = document.getElementById('Chart2').getContext('2d');
 var timescale = 10; //7 = seconds, 10 = minutes, 13 = hours, 16 = days
-var datapoints = 50;
+var datapoints = 100;
 graph2(timescale, datapoints);
 
 function choose(choice) {
