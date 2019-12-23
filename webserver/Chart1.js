@@ -1,11 +1,15 @@
 console.log("running");
 var ctx = document.getElementById('Chart1').getContext('2d');
 
-var timer = setInterval(graph(datapoints), 500);
-
 if (typeof datapoints != 'number') {
     var datapoints = 100
 }
+
+graph(datapoints)
+
+window.setInterval(function() {
+    graph(datapoints);
+}, 1000);
 
 function setup1() {
     var datapoints = document.getElementById("userinput1").value;
@@ -150,6 +154,7 @@ function graph(datapoints) {
                 },
 
                 options: {
+                    animation: false,
                     scales: {
                         yAxes: [{
                             ticks: {
@@ -161,4 +166,5 @@ function graph(datapoints) {
             });
         }
     });
+
 }
