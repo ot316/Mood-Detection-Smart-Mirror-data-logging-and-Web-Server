@@ -9,9 +9,10 @@ window.setInterval(function() {
 
 function setup1() {
     var datapoints = parseFloat(document.getElementById("userinput1").value);
-    if (datapoints == NaN) {
+    if (isNaN(datapoints) == true) {
         var datapoints = 100;
     }
+
     console.log(datapoints);
     graph(datapoints);
 }
@@ -156,9 +157,10 @@ function graph(datapoints) {
                     animation: false,
                     scales: {
                         yAxes: [{
+                            display: true,
                             ticks: {
-                                beginAtZero: true,
-                                suggestedMin: 0
+                                min: 0, // minimum value
+                                max: 1.2 // maximum value
                             }
                         }]
                     }
