@@ -3,5 +3,6 @@
 .csv
 *.npy
 *.img
+videoTester.py
 
 
