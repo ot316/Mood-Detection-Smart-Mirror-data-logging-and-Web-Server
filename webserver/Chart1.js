@@ -113,7 +113,7 @@ function graph(datapoints) {
                         borderColor: [
                             'rgba(200, 30, 212, 0.5)',
                         ],
-                        borderWidth: 1
+                        borderWidth: 2.5
                     }, {
                         fill: false,
                         label: 'Surprise',
@@ -121,7 +121,7 @@ function graph(datapoints) {
                         borderColor: [
                             'rgba(255, 255, 12, 0.5)',
                         ],
-                        borderWidth: 1
+                        borderWidth: 2.5
                     }, {
                         fill: false,
                         label: 'Sad',
@@ -129,7 +129,7 @@ function graph(datapoints) {
                         borderColor: [
                             'rgba(12, 32, 255, 0.5)',
                         ],
-                        borderWidth: 1
+                        borderWidth: 2.5
                     }, {
                         fill: false,
                         label: 'Disgust',
@@ -137,7 +137,7 @@ function graph(datapoints) {
                         borderColor: [
                             'rgba(70, 255, 2, 0.5)',
                         ],
-                        borderWidth: 1
+                        borderWidth: 2.5
                     }, {
                         fill: false,
                         label: 'Anger',
@@ -145,7 +145,7 @@ function graph(datapoints) {
                         borderColor: [
                             'rgba(255, 0, 0, 0.5)',
                         ],
-                        borderWidth: 1
+                        borderWidth: 2.5
                     }]
                 },
 
