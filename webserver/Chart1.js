@@ -3,10 +3,12 @@ var ctx = document.getElementById('Chart1').getContext('2d');
 
 setup1();
 
+// refresh interval function
 window.setInterval(function() {
     setup1();
 }, 1000);
 
+// setup
 function setup1() {
     var datapoints = parseFloat(document.getElementById("userinput1").value);
     if (isNaN(datapoints) == true) {
@@ -41,7 +43,6 @@ function graph(datapoints) {
             var happy = [];
             var sad = [];
             var surprise = [];
-            var maximumpredictedemotion = ["Maxium Predicted Emotion"];
 
 
             //push data to empty arrays
@@ -54,7 +55,6 @@ function graph(datapoints) {
                 happy.push(data[i][4]);
                 sad.push(data[i][5]);
                 surprise.push(data[i][6]);
-                maximumpredictedemotion.push(data[i][8]);
             }
 
 

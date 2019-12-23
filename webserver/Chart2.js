@@ -4,19 +4,20 @@ var timescale = 10; //7 = seconds, 10 = minutes, 13 = hours, 16 = days
 var datapoints = 100;
 graph2(timescale, datapoints);
 
+
+// user input function
 function choose(choice) {
     timescale = choice;
     console.log(timescale);
     graph2(timescale, datapoints);
 }
 
+//Setup function
 function setup2() {
     var datapoints = document.getElementById("userinput2").value;
     console.log(datapoints)
     graph2(timescale, datapoints)
 }
-
-
 
 // min max scaler normalisation function
 function normalise(array) {
@@ -75,7 +76,6 @@ function graph2(timescale, datapoints) {
             console.log(uniquetimes);
 
             //create an array of the number of readings per timescale
-
             var countarray = [];
             countarray.push(1);
             var counter = 0;
@@ -119,7 +119,7 @@ function graph2(timescale, datapoints) {
                     }
                 }
             }
-
+            // datetime
             for (var i = 0; i < uniquetimes.length; i++) {
                 average[i][0] = uniquetimes[i];
             }
