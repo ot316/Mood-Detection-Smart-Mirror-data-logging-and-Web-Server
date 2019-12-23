@@ -153,7 +153,7 @@ function graph(datapoints) {
                 },
 
                 options: {
-                    animation: false
+                    animation: false,
                     scales: {
                         yAxes: [{
                             ticks: {
