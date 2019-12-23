@@ -19,8 +19,8 @@ function setup1() {
 
 // min max scaler normalisation function
 function normalise(array) {
-    var max = parseFloat(Math.max(array));
-    var min = parseFloat(Math.min(array));
+    var max = Math.max.apply(null, array);
+    var min = Math.min.apply(null, array);
     for (var i = 0; i < array.length; i++) {
         array[i] = (array[i] - min) / (max - min)
     }
@@ -61,7 +61,7 @@ function graph(datapoints) {
 
 
 
-            console.log("data processed");
+            console.log("Data processed");
 
             // strip datetime of seconds and format 
             for (var i = 0; i < datetime.length; i++) {
@@ -75,7 +75,7 @@ function graph(datapoints) {
             happy = normalise(happy);
             sad = normalise(sad);
             surprise = normalise(surprise);
-            console.log(disgust);
+            console.log("Data Normalised");
 
             var Chart1 = new Chart(ctx, {
                 type: 'line',
