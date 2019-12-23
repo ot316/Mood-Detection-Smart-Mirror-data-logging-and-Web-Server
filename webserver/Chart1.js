@@ -19,8 +19,8 @@ function setup1() {
 
 // min max scaler normalisation function
 function normalise(array) {
-    var max = Math.max(array);
-    var min = Math.min(array);
+    var max = parseFloat(Math.max(array));
+    var min = parseFloat(Math.min(array));
     for (var i = 0; i < array.length; i++) {
         array[i] = (array[i] - min) / (max - min)
     }
