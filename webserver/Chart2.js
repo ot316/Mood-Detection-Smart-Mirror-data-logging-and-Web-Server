@@ -240,6 +240,7 @@ function graph2(timescale, datapoints) {
                 options: {
                     scales: {
                         yAxes: [{
+                            stacked: false,
                             ticks: {
                                 beginAtZero: true
                             }
