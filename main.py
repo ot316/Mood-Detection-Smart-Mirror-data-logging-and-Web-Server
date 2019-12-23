@@ -43,11 +43,6 @@ while True:
         print("camera error")
         break
     
-    #rotate image
-
-
-    
-    
     gray_img= cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
     
     
@@ -63,7 +58,7 @@ while True:
         img_pixels = np.expand_dims(img_pixels, axis = 0) 
         img_pixels /= 255 # scale pixel values
         
-        #fee image data into CNN
+        #feed image data into CNN
         predictions = model.predict(img_pixels)
 
         #find max indexed array

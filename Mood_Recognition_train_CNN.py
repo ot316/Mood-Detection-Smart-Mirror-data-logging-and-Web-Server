@@ -83,8 +83,8 @@ model.fit(X_train, y_train,
 
 
 #Saving the  model for later use
-fer_json = model.to_json()
+model_json = model.to_json()
 with open("model.json", "w") as json_file:
-    json_file.write(fer_json)
+    json_file.write(model_json)
 model.save_weights("model_weights.h5")
 print("Model Saved")
