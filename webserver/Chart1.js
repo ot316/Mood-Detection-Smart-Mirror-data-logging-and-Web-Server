@@ -5,7 +5,7 @@ setup1();
 
 window.setInterval(function() {
     setup1();
-}, 1000);
+}, 3000);
 
 function setup1() {
     var datapoints = parseFloat(document.getElementById("userinput1").value);
