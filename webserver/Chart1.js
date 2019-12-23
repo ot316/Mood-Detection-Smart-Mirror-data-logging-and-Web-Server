@@ -153,11 +153,12 @@ function graph(datapoints) {
                 },
 
                 options: {
-                    animation: false,
+                    animation: false
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero: true
+                                beginAtZero: true,
+                                suggestedMin: 0
                             }
                         }]
                     }
