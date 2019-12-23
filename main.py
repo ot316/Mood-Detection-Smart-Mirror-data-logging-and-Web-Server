@@ -81,7 +81,7 @@ while True:
             cv2.putText(test_img, predicted_emotion, (int(x), int(y-10)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 2)
             count+=1
                 
-        if count == 100:
+        if count == 10:
             df.to_csv("webserver/emotion_data.csv")
             print("csv file saved")
             count = 0

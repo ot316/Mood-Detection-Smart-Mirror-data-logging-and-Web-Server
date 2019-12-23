@@ -5,11 +5,11 @@ setup1();
 
 window.setInterval(function() {
     setup1();
-}, 1000);
+}, 3000);
 
 function setup1() {
     var datapoints = parseFloat(document.getElementById("userinput1").value);
-    if (typeof datapoints != 'number') {
+    if (typeof datapoints == 'undefined') {
         var datapoints = 100;
     }
     console.log(datapoints);
