@@ -1,6 +1,8 @@
 console.log("running");
 var ctx = document.getElementById('Chart1').getContext('2d');
 
+setTimeout(graph(datapoints), 1000);
+
 if (typeof datapoints != 'number') {
     var datapoints = 100
 }
