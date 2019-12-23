@@ -8,7 +8,7 @@ window.setInterval(function() {
 }, 1000);
 
 function setup1() {
-    var datapoints = document.getElementById("userinput1").value;
+    var datapoints = parseFloat(document.getElementById("userinput1").value);
     if (typeof datapoints != 'number') {
         var datapoints = 100;
     }
