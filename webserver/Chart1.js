@@ -5,15 +5,13 @@ setup1();
 
 window.setInterval(function() {
     setup1();
-}, 3000);
+}, 1000);
 
 function setup1() {
     var datapoints = parseFloat(document.getElementById("userinput1").value);
     if (isNaN(datapoints) == true) {
         var datapoints = 100;
     }
-
-    console.log(datapoints);
     graph(datapoints);
 }
 

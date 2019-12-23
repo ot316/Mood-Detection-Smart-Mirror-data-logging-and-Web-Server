@@ -19,3 +19,8 @@ td {
     border: 1px black solid;
     padding: 5px;
 }
+
+.download {
+    margin: auto;
+    padding: 20px;
+}
