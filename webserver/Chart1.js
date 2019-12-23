@@ -8,10 +8,7 @@ if (typeof datapoints != 'number') {
 graph(datapoints)
 
 window.setInterval(function() {
-    setup();
-    if (typeof datapoints != 'number') {
-        var datapoints = 100
-    }
+    setup1();
 }, 1000);
 
 function setup1() {
