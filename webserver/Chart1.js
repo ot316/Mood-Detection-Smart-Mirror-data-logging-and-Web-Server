@@ -104,7 +104,7 @@ function graph(datapoints) {
             happy = normalise(happy);
             sad = normalise(sad);
             surprise = normalise(surprise);
-            console.log("data normalised");
+            console.log("disgust");
 
             var Chart1 = new Chart(ctx, {
                 type: 'line',
