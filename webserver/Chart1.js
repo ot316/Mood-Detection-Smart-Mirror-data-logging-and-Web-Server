@@ -9,7 +9,7 @@ window.setInterval(function() {
 
 function setup1() {
     var datapoints = parseFloat(document.getElementById("userinput1").value);
-    if (datapoints == NaN) {
+    if (isNaN(datapoints) == true) {
         var datapoints = 100;
     }
     console.log(datapoints);
