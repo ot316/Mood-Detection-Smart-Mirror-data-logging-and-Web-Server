@@ -1,13 +1,15 @@
 console.log("running");
 var ctx = document.getElementById('Chart1').getContext('2d');
 
-var timer = setTimeout(graph(datapoints), 500);
-
 if (typeof datapoints != 'number') {
     var datapoints = 100
 }
 
-graph(datapoints);
+graph(datapoints)
+
+window.setInterval(function() {
+    graph(datapoints);
+}, 1000);
 
 function setup1() {
     var datapoints = document.getElementById("userinput1").value;
@@ -18,9 +20,13 @@ function setup1() {
 // min max scaler normalisation function
 function normalise(array) {
     var i;
-    var max = array.MIN_VALUE;
-    var min = array.MAX_VALUE;
-
+    var max = Number.MIN_VALUE;
+    var min = Number.MAX_VALUE;
+    for (i = 0; i < array.length; i++) {
+        if (array[i] > max) {
+            max = array[i];
+        }
+    }
 
     for (i = 0; i < array.length; i++) {
         if (array[i] < min) {
@@ -33,8 +39,8 @@ function normalise(array) {
         array[i] = norm;
     }
 
-    max = array.MIN_VALUE;
-    min = array.MAX_VALUE;
+    max = Number.MIN_VALUE;
+    min = Number.MAX_VALUE;
     for (i = 0; i < array.length; i++) {
         if (array[i] > max) {
             max = array[i];
@@ -148,6 +154,7 @@ function graph(datapoints) {
                 },
 
                 options: {
+                    animation: false,
                     scales: {
                         yAxes: [{
                             ticks: {
@@ -159,4 +166,5 @@ function graph(datapoints) {
             });
         }
     });
+
 }
