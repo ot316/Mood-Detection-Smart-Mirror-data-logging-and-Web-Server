@@ -13,6 +13,9 @@ window.setInterval(function() {
 
 function setup1() {
     var datapoints = document.getElementById("userinput1").value;
+    if (typeof datapoints != 'number') {
+        var datapoints = 100
+    }
     console.log(datapoints)
     graph(datapoints)
 }
