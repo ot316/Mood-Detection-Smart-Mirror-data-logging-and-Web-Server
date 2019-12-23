@@ -20,40 +20,11 @@ function setup2() {
 
 // min max scaler normalisation function
 function normalise(array) {
-    var i;
-    var max = Number.MIN_VALUE;
-    var min = Number.MAX_VALUE;
-    for (i = 0; i < array.length; i++) {
-        if (array[i] > max) {
-            max = array[i];
-        }
+    var max = Math.max.apply(null, array);
+    var min = Math.min.apply(null, array);
+    for (var i = 0; i < array.length; i++) {
+        array[i] = (array[i] - min) / (max - min)
     }
-
-    for (i = 0; i < array.length; i++) {
-        if (array[i] < min) {
-            min = array[i];
-        }
-    }
-
-    for (i = 0; i < array.length; i++) {
-        var norm = (array[i] - min) / (max - min);
-        array[i] = norm;
-    }
-
-    max = Number.MIN_VALUE;
-    min = Number.MAX_VALUE;
-    for (i = 0; i < array.length; i++) {
-        if (array[i] > max) {
-            max = array[i];
-        }
-    }
-
-    for (i = 0; i < array.length; i++) {
-        if (array[i] < min) {
-            min = array[i];
-        }
-    }
-
     return (array)
 }
 
