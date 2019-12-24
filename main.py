@@ -56,8 +56,8 @@ while True:
         face=cv2.resize(face,(width,height)) #resize to 48 * 48
         img_pixels = image.img_to_array(face) #create pixel array
         img_pixels = np.expand_dims(img_pixels, axis = 0) 
-        #img_pixels = (img_pixels-min(img_pixels))/(max(img_pixels)-min(img_pixels))
-        img_pixels /= 255
+        img_pixels = (img_pixels-min(img_pixels))/(max(img_pixels)-min(img_pixels))
+        #img_pixels /= 255
         
         #feed image data into CNN
         predictions = model.predict(img_pixels)
