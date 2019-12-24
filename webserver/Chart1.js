@@ -6,7 +6,7 @@ setup1();
 // refresh interval function
 window.setInterval(function() {
     setup1();
-}, 1000);
+}, 1500);
 
 // setup
 function setup1() {
