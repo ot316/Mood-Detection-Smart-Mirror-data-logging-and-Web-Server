@@ -134,7 +134,7 @@ function graph2(timescale, datapoints) {
             var sad = [];
             var surprise = [];
 
-            //split into individual arrays
+            //split
             for (var i = 0; i < uniquetimes.length; i++) {
                 angry[i] = average[i][1];
                 disgust[i] = average[i][2];

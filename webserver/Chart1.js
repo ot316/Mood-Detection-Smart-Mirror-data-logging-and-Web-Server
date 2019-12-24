@@ -128,8 +128,7 @@ function graph(datapoints) {
                         yAxes: [{
                             display: true,
                             ticks: {
-                                min: 0, // minimum value
-                                max: 1.2 // maximum value
+
                             }
                         }]
                     }
