@@ -115,7 +115,6 @@ function graph2(timescale, datapoints) {
                 for (var j = cumulativecountarray[i]; j < cumulativecountarray[i + 1]; j++) {
                     for (var k = 1; k < 6; k++) {
                         average[i][k] += parseFloat(array[j][k]);
-                        average[i][k] = average[i][k] / countarray[i + 1];
                     }
                 }
             }
