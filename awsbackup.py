@@ -19,5 +19,5 @@ def upload_file(file_name, bucket, object_name):
         return False
     return True
 
-upload_file('webserver/emotion_data.csv', 'oli-thompson-siot','Mood Recognition_Dataset.csv')
+upload_file('webserver/emotion_data.csv', 'oli-thompson-siot','Mood_Recognition_Dataset.csv')
 print("file uploaded  to AWS")
