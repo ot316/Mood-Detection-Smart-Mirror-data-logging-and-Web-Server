@@ -33,7 +33,7 @@ function normalise(array) {
 function graph2(timescale, datapoints) {
     Papa.parse("emotion_data.csv", {
         download: true,
-        complete: function(results) {
+        complete: function (results) {
 
             console.log("data parsed");
 
@@ -41,7 +41,7 @@ function graph2(timescale, datapoints) {
             //initialise 2D array
             var data = results.data
             var array = new Array(7)
-
+	    console.log(data);
             for (var i = 0; i < data.length; i++) {
                 array[i] = [];
             }
@@ -68,7 +68,7 @@ function graph2(timescale, datapoints) {
             var uniquetimes = [];
             for (var i = 1; i < data.length; i++) {
                 if (!(uniquetimes.includes(array[i][0]))) {
-                    if (typeof(array[i][0]) === 'string') {
+                    if (typeof (array[i][0]) === 'string') {
                         uniquetimes.push(array[i][0]);
                     }
                 }
@@ -94,7 +94,7 @@ function graph2(timescale, datapoints) {
 
             //create a cumulative count array for indexing
             var cumulativecountarray = [];
-            countarray.reduce(function(a, b, i) { return cumulativecountarray[i] = a + b; }, 0);
+            countarray.reduce(function (a, b, i) { return cumulativecountarray[i] = a + b; }, 0);
 
             console.log(cumulativecountarray);
 
@@ -115,10 +115,15 @@ function graph2(timescale, datapoints) {
                 for (var j = cumulativecountarray[i]; j < cumulativecountarray[i + 1]; j++) {
                     for (var k = 1; k < 6; k++) {
                         average[i][k] += parseFloat(array[j][k]);
-                        average[i][k] = average[i][k] / countarray[i + 1];
                     }
                 }
             }
+            for (var i = 0; i < uniquetimes.length; i++) {
+                for (var k = 1; k < 6; k++) {
+                    average[i][k] = average[i][k] / countarray[i + 1];
+                }
+            }
+
             // datetime
             for (var i = 0; i < uniquetimes.length; i++) {
                 average[i][0] = uniquetimes[i];
