@@ -5,3 +5,5 @@
 *.img
 videoTester.py
 webserver/emotion_data.csv
+mymodel.json
+mymodel_weights.h5
