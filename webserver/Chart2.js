@@ -59,7 +59,7 @@ function graph2(timescale, datapoints) {
 
             // strip time of seconds and format 
             for (var i = 1; i < array.length - 1; i++) {
-                array[i][0] = array[i][0].substring(5, array[i][0].length - parseFloat(timescale));
+                array[i][0] = array[i][0].substring(0, array[i][0].length - parseFloat(timescale));
                 array[i][0] = array[i][0].replace('-', '/');
 
             }
